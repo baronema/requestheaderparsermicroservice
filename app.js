@@ -1,9 +1,11 @@
 const   express = require('express'),
+        favicon = require('express-favicon'),
         path    = require('path'),
         app     = express(),
         port    = process.env.PORT || 3000;
         
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.get('/', function(req, res) {
     res('index.html');
@@ -23,5 +25,5 @@ app.get('/api/whoami', function(req, res) {
 
 
 app.listen(process.env.PORT, process.env.IP, function() {
-    console.log("Server started!!!");
+    console.log("Server is running at port " + port);
 });
