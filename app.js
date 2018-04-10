@@ -2,7 +2,7 @@ const   express = require('express'),
         favicon = require('express-favicon'),
         path    = require('path'),
         app     = express(),
-        port    = process.env.PORT || 3000;
+        PORT    = process.env.PORT || 3000;
         
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -24,6 +24,6 @@ app.get('/api/whoami', function(req, res) {
 });
 
 
-app.listen(port, function() {
-  console.log('Server is listening on port ' + port);
+app.listen(PORT, function() {
+  console.log('Server is listening on port ' + PORT);
 });
