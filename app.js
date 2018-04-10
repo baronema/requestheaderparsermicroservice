@@ -24,6 +24,6 @@ app.get('/api/whoami', function(req, res) {
 });
 
 
-app.listen(process.env.PORT, process.env.IP, function() {
-    console.log("Server is running at port " + port);
+app.listen(port, function() {
+  console.log('Server is listening on port ' + port);
 });
